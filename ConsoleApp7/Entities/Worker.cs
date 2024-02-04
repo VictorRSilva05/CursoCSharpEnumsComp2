@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApp7.Entities;
 
 namespace ConsoleApp7.Entities
 {
@@ -32,6 +33,19 @@ namespace ConsoleApp7.Entities
         public void RemoveContract(HourContract contract)
         {
             Contracts.Remove(contract);
+        }
+
+        public double Income(int month, int year)
+        {
+            Double sum = BaseSalary;
+            foreach (HourContract contract in Contracts)
+            {
+                if (contract.Date.Year == year && contract.Date.Month == month)
+                {
+                    sum += contract.TotalValue();
+                }
+            }
+            return sum;
         }
     }
 }

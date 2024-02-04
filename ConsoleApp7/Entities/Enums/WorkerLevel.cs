@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp7.Entities.Enums
 {
-    enum WorkerLevel
+    enum WorkerLevel : int
     {
         Junior,
         MidLevel,
